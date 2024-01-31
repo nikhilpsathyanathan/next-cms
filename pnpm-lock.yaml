@@ -29,6 +29,9 @@ dependencies:
   sanity:
     specifier: '3'
     version: 3.27.0(@types/node@20.11.13)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+  sanity-plugin-internationalized-array:
+    specifier: ^1.10.8
+    version: 1.10.8(@sanity/ui@2.0.1)(react-dom@18.2.0)(react@18.2.0)(sanity@3.27.0)(styled-components@6.1.8)
   styled-components:
     specifier: '6'
     version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
