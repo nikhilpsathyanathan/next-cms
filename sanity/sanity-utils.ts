@@ -16,10 +16,9 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getPage() {
-  const query = groq`*[_type == "page" && language == $language]{
+  const query = groq`*[_type == "page"]{
     field,
-    value,
-    language,
+     "value": value[_key == $language][0].value,
   }`;
   const page = await client.fetch(query, { language: "en" });
   return page;

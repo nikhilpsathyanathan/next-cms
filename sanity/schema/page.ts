@@ -6,21 +6,13 @@ export const page = {
   type: "document",
   fields: [
     {
-      name: "field", // field name is required and must be unique
-      type: "string", // field type is required
-    },
-
-    {
-      name: "value",
+      name: "field",
       type: "string",
     },
+
+    defineField({
+      name: "value",
+      type: "internationalizedArrayString",
+    }),
   ],
 };
-
-defineField({
-  // should match 'languageField' plugin configuration setting, if customized
-  name: "language",
-  type: "string",
-  readOnly: true,
-  hidden: true,
-});

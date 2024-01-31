@@ -3,6 +3,8 @@
  */
 
 import { documentInternationalization } from "@sanity/document-internationalization";
+import { internationalizedArray } from "sanity-plugin-internationalized-array";
+
 import { visionTool } from "@sanity/vision";
 import { defineConfig, defineField } from "sanity";
 import { structureTool } from "sanity/structure";
@@ -29,9 +31,17 @@ export default defineConfig({
         { id: "en", title: "English" },
         { id: "de", title: "German" },
       ],
-      schemaTypes: ["page"],
+      schemaTypes: ["project"],
       languageField: `language`, // defauts to "language"
       metadataFields: [defineField({ name: "slug", type: "slug" })],
+    }),
+    internationalizedArray({
+      languages: [
+        { id: "nl", title: "Dutch" },
+        { id: "en", title: "English" },
+      ],
+      defaultLanguages: ["en"],
+      fieldTypes: ["string"],
     }),
   ],
 });
