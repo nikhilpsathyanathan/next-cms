@@ -14,3 +14,13 @@ export async function getProjects(): Promise<Project[]> {
   const projects = await client.fetch(query);
   return projects;
 }
+
+export async function getPage() {
+  const query = groq`*[_type == "page" && language == $language]{
+    field,
+    value,
+    language,
+  }`;
+  const page = await client.fetch(query, { language: "en" });
+  return page;
+}
